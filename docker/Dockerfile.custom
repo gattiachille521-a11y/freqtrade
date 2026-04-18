@@ -1,11 +1,6 @@
-FROM freqtradeorg/freqtrade:develop
+FROM freqtradeorg/freqtrade:stable
 
-# Switch user to root if you must install something from apt
-# Don't forget to switch the user back below!
-# USER root
+# Installiamo le librerie pesanti per l'Intelligenza Artificiale e la matematica vettoriale
+RUN pip install --user torch pandas-ta joblib scikit-learn
 
-# The below dependency - pyti - serves as an example. Please use whatever you need!
-RUN pip install --user pyti
-
-# Switch back to user (only if you required root above)
-# USER ftuser
+RUN pip install --user --no-cache-dir plotly

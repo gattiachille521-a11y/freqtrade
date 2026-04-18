@@ -1,0 +1,6 @@
+services:
+  freqtrade:
+    image: "" # Annulla l'immagine originale
+    build:
+      context: .
+      dockerfile: "./docker/Dockerfile.custom"
